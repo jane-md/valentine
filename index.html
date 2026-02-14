@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine's Gift</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Raleway -->
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER WITH BURGER -->
+<header class="navbar">
+  <div class="burger" id="burger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</header>
+
+<!-- SLIDING SIDEBAR MENU -->
+<nav class="sidebar" id="sidebar">
+  <a href="#" data-page="home">Home</a>
+  <a href="#" data-page="surprise">Short Cover</a>
+  <a href="#" data-page="scrapbook">Scrapbook</a>
+  <a href="#" data-page="message">Message</a>
+</nav>
+
+<!-- HOME SECTION -->
+<section id="home" class="section home-section">
+  <div class="hero-text">
+    <h1>Happy Valentine's, baby <33 </h1>
+    <p>I love you always</p>
+  </div>
+</section>
+
+<!-- SCRAPBOOK SECTION -->
+<!-- SCRAPBOOK SECTION -->
+<section id="scrapbook" class="section hidden">
+  
+
+  <div class="scrapbook-container">
+    <!-- Envelope View -->
+    <div id="envelope-view">
+      <img src="envelope.jpg" alt="Envelope">
+      <button onclick="openScrapbook()">Open Me</button>
+    </div>
+
+    <!-- QR View -->
+    <div id="qr-view" class="hidden">
+      <img src="qr-code.jpg" alt="QR Code">
+      <br><br>
+      <p>Scan this QR code</p>
+    </div>
+  </div>
+</section>
+
+<!-- MESSAGE SECTION -->
+<section id="message" class="section hidden"><br>
+  <p>‎Happy Valentine's Day po, baby.<br></br>
+‎
+‎Last valentine natin hindi pa tayo and hindi pa tayo nag m-meet po, but now grabe, pa'no ako naging ganitong kaswerte na may girlfriend na ikaw. 
+‎Not just pretty, kind and caring pa. Everytime na naiisip ko yan, naiisip ko rin na para 'kong nanalo sa lotto eh HAHAHAHAHA. Kaya hinding hindi ko na paiiyakin ang baby po, mas mamahalin ko pa po ikaw. Ayan yung deserve ng baby eh hehe I'm sorry po ulit ah :((<br></br>
+‎
+‎I know, I'm not perfect po. I know hindi ako palaging consistent or super expressive netong mga nakaraan, and minsan I get too comfortable thinking na you already know how much I love you. Pero gusto kong malaman mo po, from the bottom of my heart, na I love you more than words can ever explain po, baby. Mahal na mahal kita po, more than chats, more than calls, more than kahit anong simpleng effort na napapakita ko po.<br></br>
+‎
+I want to make bawi sa lahat ng pagkukulang ko po, baby. Gusto kong maayos natin po palagi and I promise to keep choosing you po, to keep loving you araw-araw, and to always be there for you, kahit sa days na hindi perfect ang lahat satin po. <br></br>
+‎
+‎Salamat po, baby, for being you. For choosing me. For letting me love you and be loved by you.<br></br>
+‎
+‎Happy Valentine's Day again po. I love you so much, mahal na mahal na mahal ko po ikaw. Mahal kita palagi po :))</p><br></br>
+</section>
+
+<!-- SURPRISE SECTION -->
+<section id="surprise" class="section hidden">
+  <div class="player-container">
+    <!-- Album Art -->
+    <div class="album-art">
+      <img src="album-art.jpg" alt="Album Art" id="album-art">
+    </div>
+
+    <!-- Song Info -->
+    <div class="song-info">
+      <h3 id="Kalapastangan">Kalapastangan</h3>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <span id="current-time">0:00</span>
+      <input type="range" id="progress-bar" value="0" min="0" max="100">
+      <span id="duration">0:00</span>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="play-btn" class="play-btn"></button>
+    </div>
+
+    <!-- Hidden Audio -->
+    <audio id="audio" src="song.mp3"></audio>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="surprise-modal" class="modal">
+  <div class="modal-content">
+    <p>You are my favorite person. Always. ❤️</p>
+    <button onclick="closeSurpriseModal()">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>-
