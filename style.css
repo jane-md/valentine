@@ -1,0 +1,400 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: white; /* pastel light brown */
+  color: #1f2933;
+  scroll-behavior: smooth;
+}
+
+/* HEADER */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255,255,255,0.9);
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* BURGER */
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #1f2933;
+  border-radius: 2px;
+}
+
+/* SIDEBAR MENU */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* hidden initially */
+  height: 100%;
+  width: 250px;
+  background: #fff; /* can change to pastel if needed */
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 0;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  z-index: 2000;
+}
+
+.sidebar a {
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #1f2933;
+  font-size: 16px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.sidebar a:hover {
+  background: #e0d4c1; /* light gray/pastel hover */
+  border-radius: 8px;
+}
+
+/* SHOW SIDEBAR */
+.sidebar.show {
+  left: 0;
+}
+
+/* HOME SECTION */
+/* HERO / HOME SECTION */
+.home-section {
+  min-height: 100vh;
+  width: 100%;
+  background: url('photo.jpg') center/cover no-repeat; /* replace with your image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.home-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35); /* overlay for readability */
+}
+
+.home-section .hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.home-section h1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300; /* thin for large heading */
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.home-section p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  opacity: 0.85;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#scrapbook {
+  min-height: 100vh;
+  background: url('scrapbook-bg.jpg') center center / cover no-repeat;
+  position: relative;
+  color: white;
+  
+}
+
+#scrapbook::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+}
+
+#scrapbook * {
+  position: relative;
+  z-index: 1;
+}
+
+.scrapbook-container {
+  margin-top: 100px;
+}
+
+
+.scrapbook-container img {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.scrapbook-container button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: #e6d5c3;
+color: #1f2933;
+  border-radius: 20px;
+  cursor: pointer;
+  
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.scrapbook-container button:hover {
+  background: #c5a98c;
+  transform: translateY(-2px);
+}
+
+/* SCRAPBOOK ENVELOPE */
+.envelope-container {
+  margin-top: 30px;
+}
+
+.envelope {
+  font-size: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.envelope:hover {
+  transform: scale(1.1);
+}
+
+#qr-container img {
+  width: 250px;
+  margin-top: 20px;
+}
+
+#message {
+  min-height: 100vh;
+         /* REQUIRED for centering */
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;         /* breathing space on mobile */
+}
+
+#message p {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.7;           /* slightly smoother reading */
+  max-width: 600px;
+  text-align: center;         /* more romantic letter vibe 😌 */
+  letter-spacing: 0.4px;      /* subtle handwriting polish */
+}
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  background: #d8bfa2;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.modal-content button:hover {
+  background: #c5a98c;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .home-section h1 {
+    font-size: 36px;
+  }
+  .home-section p {
+    font-size: 20px;
+  }
+}
+
+/* Player Container */
+.player-container {
+  background: #898989; /* Spotify green base */
+  max-width: 400px;
+  width: 90%;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.album-art img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.song-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+#progress-bar {
+  flex: 1;
+  -webkit-appearance: none;
+  height: 6px;
+  border-radius: 5px;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+}
+
+#progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  margin-top: -4px;
+}
+
+#current-time, #duration {
+  font-size: 12px;
+}
+
+/* Controls */
+.controls {
+  margin-top: 20px;
+}
+
+/* Play / Pause Button */
+/* Play / Pause Button Container */
+.play-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  cursor: pointer;
+  display: flex;             /* Flex centering */
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Play Icon (Triangle) */
+.play-btn::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 14px solid #666; /* gray color for play triangle */
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+/* Pause Icon */
+.play-btn.pause::before,
+.play-btn.pause::after {
+  content: '';
+  display: block;
+  width: 5px;               /* width of each bar */
+  height: 20px;             /* height of each bar */
+  background: #666;          /* gray color */
+  border-radius: 2px;       /* optional rounded ends */
+  margin: 0 2px;            /* spacing between the two bars */
+}
+
+/* Hide original triangle when pause is active */
+.play-btn.pause::before {
+  margin-right: 3px;
+}
+
+.play-btn.pause::after {
+  margin-left: 3px;
+}
+/* Responsive */
+@media (max-width: 500px) {
+  .player-container {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  .album-art img {
+    max-width: 200px;
+  }
+
+  .play-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .play-btn::before,
+  .play-btn.pause::before,
+  .play-btn.pause::after {
+    transform: scale(0.8);
+  }
+}
