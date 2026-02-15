@@ -200,23 +200,26 @@ color: #1f2933;
   margin-top: 20px;
 }
 
+
 #message {
   min-height: 100vh;
   
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+
+  padding: 40px 20px; /* smaller side padding */
 }
 
 #message p {
   font-family: 'Caveat', cursive;
   font-size: 20px;
   font-weight: 400;
-  line-height: 1.7;           /* slightly smoother reading */
-  max-width: 600px;
-  text-align: center;         /* more romantic letter vibe 😌 */
-  letter-spacing: 0.4px;      /* subtle handwriting polish */
+  line-height: 1.9;
+
+  width: 100%;
+  max-width: 100%;   /* FULL WIDTH */
+  text-align: left;  /* mas natural letter look */
+  padding: 0 10px;
 }
 /* MODAL */
 .modal {
@@ -397,5 +400,11 @@ color: #1f2933;
   .play-btn.pause::before,
   .play-btn.pause::after {
     transform: scale(0.8);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 15px; /* reduce side space on mobile */
   }
 }
