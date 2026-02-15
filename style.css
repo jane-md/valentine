@@ -202,10 +202,11 @@ color: #1f2933;
 
 #message {
   min-height: 100vh;
-         /* REQUIRED for centering */
+  
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;         /* breathing space on mobile */
+  padding: 40px 20px;
 }
 
 #message p {
